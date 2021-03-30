@@ -1,16 +1,4 @@
-#!/usr/bin/python
 
-# Copyright (c) 2020 Fernando
-# Url: https://github.com/fernandod1/
-# License: MIT
-
-# DESCRIPTION:
-# This script executes 2 actions:
-# 1.) Monitors for new image posted in a instagram account.
-# 2.) If found new image, a bot posts new instagram image in a discord channel.
-# 3.) Repeat after set interval.
-
-# REQUIREMENTS:
 # - Python v3
 # - Python module re, json, requests
 import re
@@ -21,7 +9,7 @@ import urllib.request
 import os
 import time
 
-# USAGE:
+
 # Environment Variables
 # Set IG_USERNAME to username account you want to monitor. Example - ladygaga
 # Set WEBHOOK_URL to Discord account webhook url. To know how, just Google: "how to create webhook discord".
@@ -33,7 +21,7 @@ os.environ['TIME_INTERVAL'] = '30' # Set TIME_INTERVAL to the time in seconds in
 
 INSTAGRAM_USERNAME = os.environ.get('IG_USERNAME')
 
-# ----------------------- Do not modify under this line ----------------------- #
+#please dont edit under this line or ill haunt u at night#
 
 
 def get_user_fullname(html):
@@ -61,8 +49,8 @@ def get_description_photo(html):
 
 
 def webhook(webhook_url, html):
-    # for all params, see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
-    # for all params, see https://discordapp.com/developers/docs/resources/channel#embed-object
+    # for all parameters, see https://discordapp.com/developers/docs/resources/webhook#execute-webhook
+    # for all parameters, see https://discordapp.com/developers/docs/resources/channel#embed-object
     data = {}
     data["embeds"] = []
     embed = {}
